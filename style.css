@@ -13,7 +13,130 @@
   --secondary: #102d4a;
   --background: #111a23;
   --text-color: #e1e1e1;
+  --text-secondary: #8e9193;;
   --card-bg: #18212d;
-  --border-color: #ffffff;
+  --border-color: #222936;
+  --border-radius: 10px;
 }
 
+body {
+  display: flex;
+  background: var(--background);
+  color: var(--text-color);
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+a {
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+  border-radius: var(--border-radius);
+  padding: .5em;
+  
+  &:hover {
+    background: var(--secondary);
+  }
+}
+
+#lateral-panel {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  padding: 2em;
+  border-right: solid var(--border-color) .5px;
+  justify-content: space-between;
+
+  h2 {
+    padding-bottom: 2em;
+
+  }
+}
+
+.current {
+  color: var(--background);
+  background: var(--primary);
+  pointer-events: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding: 2em;
+}
+
+main > div {
+  display: flex;
+  height: 100vh;
+  margin-top: 3em;
+  gap: 3em;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  border: solid .5px var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1em;
+}
+
+#dashboard-califications > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+
+  &:first-of-type {
+    width: 50vw;
+  }
+
+  &:last-of-type {
+    width: 20vw;
+  }
+}
+
+#dashboard-activities > article {
+  display: flex;
+  border-bottom: solid .5px var(--border-color);
+  padding: .5em 0;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+
+  &:last-of-type {
+    border: none;
+  }
+
+  div:first-child {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    background: var(--primary);
+    border-radius: var(--border-radius);
+  }
+
+  small {
+    color: var(--text-secondary);
+  }
+}
+
+.dashboard-activity-text {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
