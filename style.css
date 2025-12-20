@@ -9,8 +9,8 @@
 
 :root {
   --primary: #00ffff;
-  --primary-hover: #0d8abf;
-  --secondary: #102d4a;
+  --primary-hover: #114a63;
+  --secondary: #141f2a;
   --background: #111a23;
   --text-color: #e1e1e1;
   --text-secondary: #8e9193;;
@@ -44,7 +44,7 @@ a {
   padding: .5em;
   
   &:hover {
-    background: var(--secondary);
+    background: var(--primary-hover);
   }
 }
 
@@ -100,6 +100,10 @@ section {
   border: solid .5px var(--border-color);
   border-radius: var(--border-radius);
   padding: 1em;
+
+  h3 {
+    padding-bottom: 1em;
+  }
 }
 
 #dashboard-califications > div {
@@ -124,10 +128,11 @@ section {
 #dashboard-activities > article {
   display: flex;
   border-bottom: solid .5px var(--border-color);
-  padding: .5em 0;
+  padding: .5em;
   gap: 1em;
   align-items: center;
   justify-content: space-between;
+  border-radius: var(--border-radius);
 
   &:last-of-type {
     border: none;
@@ -140,10 +145,18 @@ section {
     background: var(--primary);
     border-radius: var(--border-radius);
   }
+
+  &:hover {
+    background: var(--secondary);
+  }
 }
 
 .dashboard-activity-text {
   display: flex;
   flex-direction: column;
   width: 90%;
+}
+
+#username-lateral-panel {
+  font-weight: bold;
 }
