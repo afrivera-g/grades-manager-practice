@@ -8,8 +8,8 @@
 }
 
 :root {
-  --primary: #137fec;
-  --primary-hover: #0d5bbf;
+  --primary: #00ffff;
+  --primary-hover: #0d8abf;
   --secondary: #102d4a;
   --background: #111a23;
   --text-color: #e1e1e1;
@@ -57,8 +57,11 @@ a {
   justify-content: space-between;
 
   h2 {
+    display: flex;
     padding-bottom: 2em;
-
+    align-items: center;
+    gap: .5em;
+    color: var(--primary);
   }
 }
 
@@ -66,6 +69,14 @@ a {
   color: var(--background);
   background: var(--primary);
   pointer-events: none;
+}
+
+strong {
+  color: var(--primary);
+}
+
+small {
+  color: var(--text-secondary);
 }
 
 main {
@@ -124,14 +135,10 @@ section {
 
   div:first-child {
     display: flex;
-    height: 40px;
-    width: 40px;
+    height: 3em;
+    width: 3em;
     background: var(--primary);
     border-radius: var(--border-radius);
-  }
-
-  small {
-    color: var(--text-secondary);
   }
 }
 
