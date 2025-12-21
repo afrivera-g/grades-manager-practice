@@ -220,3 +220,69 @@ section {
     }
   }
 }
+
+#dashboard-important > div {
+  display: flex;
+  flex-direction: column;
+}
+
+#dashboard-important article {
+  display: flex;
+  gap: 1em;
+  padding: .5em;
+  border-radius: var(--border-radius);
+  border-bottom: solid .5px var(--border-color);
+
+  div:first-of-type {
+    background: var(--primary);
+    opacity: 70%;
+    color: var(--secondary);
+    border-radius: var(--border-radius);
+    text-align: center;
+    padding: .2em;
+    height: fit-content;
+    width: 3.5em;
+  }
+
+  p:last-of-type {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &:hover {
+    background-color: var(--secondary);
+
+    div:first-of-type {
+      opacity: 100%;
+    }
+  }
+}
+
+ol {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 0;
+
+  li {
+    border-radius: 10px;
+    text-align: right;
+    padding-inline: .5em;
+  }
+
+  li:hover {
+    background-color: var(--primary-hover);
+    
+  }
+}
+
+.first-day {
+  grid-column-start: 1;
+}
+
+.day-name {
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+  margin-bottom: 1em;
+}
