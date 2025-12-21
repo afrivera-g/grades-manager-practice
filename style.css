@@ -15,6 +15,7 @@
   --text-color: #e1e1e1;
   --text-secondary: #8e9193;;
   --card-bg: #18212d;
+  --card-hover: #1f2936;
   --border-color: #222936;
   --border-radius: 10px;
 }
@@ -171,6 +172,7 @@ section {
   display: flex;
   justify-content: space-around;
   gap: 3em;
+  padding: .5em;
 }
 
 #dashboard-califications article {
@@ -195,6 +197,10 @@ section {
     margin-bottom: .5em;
   }
 
+  &:hover {
+    background-color: var(--card-hover);
+  }
+
   progress {
     width: 6em;
     height: .5em;
@@ -202,6 +208,7 @@ section {
     border: solid .5px #e1e1e1;
     border-radius: 99999px;
     overflow: hidden;
+    margin-bottom: 1em;
     
     &::-webkit-progress-bar {
       background-color: transparent;
