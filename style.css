@@ -9,11 +9,13 @@
 
 :root {
   --primary: #00ffff;
-  --primary-hover: #09e7e7;
-  --secondary: #141f2a;
+  --primary-hover: #10eded;
+  --secondary: #1b7ee1;
+  --secondary-hover: #1a71c7;
   --background: #111a23;
-  --text-color: #e1e1e1;
-  --text-secondary: #8e9193;;
+  --background-hover: #283b4e;
+  --text-color: #d6eafd;
+  --text-secondary: #6391b0;
   --card-bg: #18212d;
   --card-hover: #1f2936;
   --border-color: #1d2939;
@@ -34,18 +36,20 @@ nav {
 
   a {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    border-radius: var(--border-radius);
+    padding: .5em;
   }
 }
 
 a {
-  display: flex;
-  align-items: center;
-  color: var(--primary);
-  border-radius: var(--border-radius);
-  padding: .5em;
+  
   
   &:hover {
     background: var(--primary-hover);
+    color: var(--background);
   }
 }
 
