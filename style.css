@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: lexend, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 :root {
@@ -13,18 +15,22 @@
   --secondary: #1b7ee1;
   --secondary-hover: #1a71c7;
   --background: #111a23;
-  --background-hover: #283b4e;
+  --background-hover: #1c2834;
   --text-color: #d6eafd;
   --text-secondary: #6391b0;
   --card-bg: #18212d;
   --card-hover: #1f2936;
-  --border-color: #1d2939;
-  --border-radius: 10px;
+  --border-color: #243246;
+  --border-radius: 0.5rem;
+}
+
+html {
+  font-size: 20px;
 }
 
 body {
   display: flex;
-  background: var(--background);
+  background-color: var(--background);
   color: var(--text-color);
   height: 100vh;
 }
@@ -41,32 +47,31 @@ nav {
     color: var(--primary);
     border-radius: var(--border-radius);
     padding: .5em;
-  }
-}
+    gap: .25em;
 
-a {
-  
-  
-  &:hover {
-    background: var(--primary-hover);
-    color: var(--background);
+    &:hover {
+    background-color: var(--background-hover);
+  }
   }
 }
 
 #lateral-panel {
   display: flex;
   flex-direction: column;
-  width: 20em;
-  padding: 2em;
-  border-right: solid var(--border-color) .5px;
+  width: 15rem;
+  padding: 1rem;
+  border-right: solid var(--border-color) .025rem;
   justify-content: space-between;
 
   h2 {
     display: flex;
-    padding-bottom: 2em;
-    align-items: center;
-    gap: .5em;
+    margin-bottom: 2rem;
+    gap: .5rem;
     color: var(--primary);
+  }
+
+  > div p {
+    font-weight: bold;
   }
 }
 
@@ -87,60 +92,44 @@ small {
 main {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  padding: 3rem;
+  margin: auto;
   height: 100vh;
-  padding: 2em;
+  /*Esto se tiene que pasar al media query*/
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
-main > div {
+main > div:first-of-type {
   display: flex;
   height: fit-content;
-  margin-top: 3em;
-  gap: 3em;
+  gap: 3rem;
+  margin-top: 2rem;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
+.dashboard-sections {
   border: solid .5px var(--border-color);
   border-radius: var(--border-radius);
-  padding: 1em;
-  height: fit-content;
-  min-width: fit-content;
+  padding: 1rem;
 
   h3 {
-    padding-bottom: 1em;
+    padding-bottom: 1rem;
   }
-}
-
-#dashboard-califications > div {
-  display: flex;
-  justify-content: space-between;
 }
 
 .dashboard-columns {
   display: flex;
   flex-direction: column;
-  gap: 3em;
-
-  &:first-of-type {
-    width: 50vw;
-  }
-
-  &:last-of-type {
-    width: 20vw;
-  }
+  gap: 3rem;
 }
 
 #dashboard-activities > article {
   display: flex;
-  border-bottom: solid .5px var(--border-color);
-  padding: .5em;
-  gap: 1em;
-  align-items: center;
-  justify-content: space-between;
+  border-bottom: solid .025rem var(--border-color);
+  padding: .5rem;
+  gap: .5rem;
   border-radius: var(--border-radius);
-  min-width: 20em;
+  min-width: 20rem;
 
   &:last-of-type {
     border: none;
@@ -148,9 +137,9 @@ section {
 
   div:first-child {
     display: flex;
-    min-height: 2.5em;
-    min-width: 2.5em;
-    border: solid .5px var(--primary);
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+    border: solid .025rem var(--primary);
     border-radius: var(--border-radius);
     justify-content: center;
     align-items: center;
@@ -158,69 +147,65 @@ section {
   }
 
   &:hover {
-    background: var(--secondary);
+    background-color: var(--background-hover);
   }
 }
 
 .dashboard-activity-text {
-  display: flex;
-  flex-direction: column;
   width: 90%;
-}
-
-#username-lateral-panel {
-  font-weight: bold;
 }
 
 #dashboard-califications div{
   display: flex;
-  justify-content: space-around;
-  gap: 3em;
-  padding: .5em;
+  gap: 1.5rem;
+  padding: .5rem;
 }
 
 #dashboard-califications article {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: .5em;
-  border: solid .5px var(--border-color);
-  background: var(--card-bg);
+  justify-content: center;
+  border: solid .025rem var(--border-color);
+  background-color: var(--card-bg);
   border-radius: var(--border-radius);
-  height: 10em;
-  width: 100%;
+  min-height: 12rem;
+  width: 8rem;
+  padding: .5rem;
+  transition: transform 0.3s ease-in-out;
 
   p:first-child{
     text-align: center;
     font-weight: bold;
-    margin-bottom: .5em;
+    margin-bottom: .5rem;
   }
 
   p:nth-child(2) {
-    font-size: 24px;
-    margin-bottom: .5em;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
   }
 
   &:hover {
     background-color: var(--card-hover);
+    transform: scale(1.1);
   }
 
   progress {
-    width: 6em;
-    height: .5em;
+    width: 6rem;
+    height: .5rem;
     background-color: transparent;
-    border: solid .5px #e1e1e1;
+    border: solid .025rem var(--border-color);
     border-radius: 99999px;
     overflow: hidden;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     
     &::-webkit-progress-bar {
       background-color: transparent;
     }
 
     &::-webkit-progress-value {
-      background-color: var(--primary); /* Color del progreso */
-      border-radius: 10px;
+      background-color: orange; /* Color del progreso */
+      border-radius: var(--border-radius);
     }
   }
 }
@@ -232,33 +217,34 @@ section {
 
 #dashboard-important article {
   display: flex;
-  gap: 1em;
-  padding: .5em;
+  gap: 1rem;
+  padding: .5rem;
   border-radius: var(--border-radius);
-  border-bottom: solid .5px var(--border-color);
+  border-bottom: solid .025rem var(--border-color);
+  transition: transform .3s ease-in-out;
 
   div:first-of-type {
-    background: var(--primary);
-    opacity: 70%;
+    background-color: var(--primary);
     color: var(--secondary);
     border-radius: var(--border-radius);
     text-align: center;
-    padding: .2em;
-    height: fit-content;
-    width: 3.5em;
+    padding: .2rem;
+    min-height: 3rem;
+    min-width: 3rem;
   }
 
-  p:last-of-type {
-    font-size: 20px;
+  > div:first-of-type p:first-of-type {
+    font-size: .8rem;
+    font-weight: bold;
+  }
+
+  > div:first-of-type p:last-of-type {
+    font-size: 1.25rem;
     font-weight: bold;
   }
 
   &:hover {
-    background-color: var(--secondary);
-
-    div:first-of-type {
-      opacity: 100%;
-    }
+    background-color: var(--background-hover);
   }
 }
 
@@ -275,8 +261,7 @@ ol {
   }
 
   li:hover {
-    background-color: var(--primary-hover);
-    
+    background-color: var(--background-hover);
   }
 }
 
