@@ -9,14 +9,14 @@
 
 :root {
   --primary: #00ffff;
-  --primary-hover: #114a63;
+  --primary-hover: #09e7e7;
   --secondary: #141f2a;
   --background: #111a23;
   --text-color: #e1e1e1;
   --text-secondary: #8e9193;;
   --card-bg: #18212d;
   --card-hover: #1f2936;
-  --border-color: #222936;
+  --border-color: #1d2939;
   --border-radius: 10px;
 }
 
@@ -90,7 +90,7 @@ main {
 
 main > div {
   display: flex;
-  height: 100vh;
+  height: fit-content;
   margin-top: 3em;
   gap: 3em;
 }
@@ -285,4 +285,42 @@ ol {
   text-align: center;
   pointer-events: none;
   margin-bottom: 1em;
+}
+
+.search {
+  height: 3em;
+  width: fit-content;
+  gap: 1em;
+  border-bottom: solid .5px var(--border-color);
+  border-radius: var(--border-radius);
+  padding: .5em;
+}
+
+.search input {
+  border: none;
+  
+  background-color: transparent;
+  width: 90vh;
+  position: relative;
+  color: var(--text-color);
+  font-size: 16px;
+  outline: transparent;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  padding: .5em;
+  gap: .5em;
+  height: 3em;
+  background-color: var(--primary);
+  border-radius: var(--border-radius);
+
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+}
+
+main > div:nth-child(2) {
+  padding-top: 0; 
 }
